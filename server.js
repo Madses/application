@@ -3,6 +3,7 @@ const {nodeConfig} = require('config');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 
+
 const app = express();
 
 //application level middleware
