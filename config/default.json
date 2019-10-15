@@ -3,6 +3,9 @@
     "port" : 3000
   },
   "mongoConfig" : {
-    "uri" : "mongodb+srv://madses:Jagexftw1@cluster-blgm4.mongodb.net/test?retryWrites=true&w=majority"
+    "uri" : "mongodb+srv://madses:Jagexftw1@cluster-blgm4.mongodb.net/application?retryWrites=true&w=majority"
+  },
+  "jwtConfig" : {
+    "secret" : "issasecrettoken"
   }
 }

@@ -1,0 +1,42 @@
+Set up the basic structure which consists of the following files :
+a server.js with express
+a config.json file to inside a config folder and a db config file
+your controllers
+the models
+the routes
+
+Each file has a specific role.
+
+In server js:
+initialize express on a specific port.
+bring in the app-level middleware:
+    - body-parser
+
+initialize the database connection function.
+in serverJs bring in the index of the routes directory. Specify any routes to the right export inside the routes index directory.
+
+
+The routes directory : contains all the routes and an index which exports all the routes so it's available to the server.
+
+The controllers directory : when an user lands on a route a function which handles the logic is called. This function is exported from within the controllers directory and used inside the routes
+directory.
+
+The models: Contains all our schemas and exports it so we can use it in our controllers.
+
+middleware : contains custom middleware
+
+The flow of creating functionalities :
+
+Start with creating a route
+Then we create the model
+after the model we create the controller
+
+
+Example for creating an user:
+
+Create a route named users
+Create a schema for when you want to create an user, specify all your fields.
+validate the fields.
+check if user exists - encrypt password - return jwt
+
+

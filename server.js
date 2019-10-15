@@ -1,10 +1,13 @@
 const express = require('express');
 const {nodeConfig} = require('config');
+const connectDb = require('./config/db');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 
-
 const app = express();
+
+//connect to database
+connectDb();
 
 //application level middleware
 app.use(bodyParser.json());
@@ -12,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.use('/user' , routes.user);
-
+app.use('/auth' , routes.auth);
 
 // Start
 const port = nodeConfig.port;
