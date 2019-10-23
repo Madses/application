@@ -1,6 +1,6 @@
 {
   "nodeConfig" : {
-    "port" : 3000
+    "port" : 2000
   },
   "mongoConfig" : {
     "uri" : "mongodb+srv://madses:Jagexftw1@cluster-blgm4.mongodb.net/application?retryWrites=true&w=majority"
