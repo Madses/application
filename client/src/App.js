@@ -1,10 +1,10 @@
 import React , {Fragment} from 'react';
-import Landing from './components/Landing';
+import Login from './components/auth/Login';
 import './App.css';
 
 const App = () => (
     <Fragment>
-      <Landing/>
+      <Login/>
     </Fragment>
 )
 
