@@ -18,8 +18,6 @@ const Landing = () => {
 
     const {username , password} = formData; 
 
-    console.log(formData)
-
     return (
         <Fragment>
             <h1>Login</h1>
