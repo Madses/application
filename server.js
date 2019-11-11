@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
-app.use('/api/user' , routes.user);
-app.use('/api/auth' , routes.auth);
+app.use('/user' , routes.user);
+app.use('/auth' , routes.auth);
 
 // Start
 const port = nodeConfig.port;
