@@ -5,16 +5,15 @@ import {setAlert} from './alert';
 export const register = ({username,email,password}) => async dispatch => {
     const config = {
         headers : {
-            'content-type' : 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            'Content-Type' : 'application/json',
         }
     };
 
     const body = JSON.stringify({username,email,password});
 
     try {
-        const res = axios.post('http://localhost:2000/user',body, config);
-        console.log(res);
+        const res = await axios.post('http://localhost:2000/api/user',body, config);
+        console.log(res.data);
         dispatch({type : REGISTER_SUCCESS , payload:res.data});
     } catch(err){
         console.log(err);
