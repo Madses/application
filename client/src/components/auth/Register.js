@@ -1,9 +1,10 @@
 import React ,{Fragment , useState} from 'react'
 import {connect} from 'react-redux';
 import {setAlert} from '../../actions/alert';
+import {register} from '../../actions/auth';
 import '../../App.css';
 
-const Register = ({setAlert}) => {
+const Register = ({setAlert , register}) => {
 
     const [formData,setFormData] = useState({
         username : '',
@@ -22,7 +23,7 @@ const Register = ({setAlert}) => {
     const onSubmit = (e) => {
         e.preventDefault();
         if(password !== password2) setAlert('Excuse me, but your password does not match', 'error');
-        console.log('success');
+        register({username,email,password});
     };
 
 
@@ -41,4 +42,4 @@ const Register = ({setAlert}) => {
     );
 };
 
-export default connect(null,{setAlert})(Register);
+export default connect(null,{setAlert,register})(Register);
