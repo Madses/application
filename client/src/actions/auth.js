@@ -12,14 +12,18 @@ export const register = ({name,email,password}) => async dispatch => {
     const body = JSON.stringify({name,email,password});
 
     try {
-        const res = await axios.post('http://localhost:5000/user', body, config);
-        console.log(res);
+        const res = await axios.post('/user', body, config);
+        console.log(res.data);
         dispatch({type : REGISTER_SUCCESS , payload:res.data});
-        console.log(res.errors)
     } catch(err){
-        
-        console.log(err.response.data.errors);
-    }
+        const errors = err.response.data.errors;
 
+        if(errors) {
+            errors.forEach(error => {
+                dispatch(setAlert(error.msg,'error'));
+            })
+        }
+        dispatch({type: REGISTER_FAIL});
+    }
 
 };
