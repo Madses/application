@@ -6,6 +6,7 @@ const {jwtConfig} = require('config');
 
 const secret = jwtConfig.secret;
 
+// check if user exists
 module.exports = async (req,res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()) return res.status(400).json({errors : errors.array()});

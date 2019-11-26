@@ -1,5 +1,7 @@
 const User = require('../../models/User');
 
+
+//get user data from logged in user
 const getAuthenticatedUser = async function (req,res) {
     const id = req.user.id;
     try{

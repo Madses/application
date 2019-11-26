@@ -2,9 +2,10 @@ import React ,{Fragment , useState} from 'react'
 import {connect} from 'react-redux';
 import {setAlert} from '../../actions/alert';
 import {register} from '../../actions/auth';
+import {Redirect} from "react-router-dom";
 import '../../App.css';
 
-const Register = ({setAlert , register}) => {
+const Register = ({setAlert ,register,isAuthenticated}) => {
 
     const [formData,setFormData] = useState({
         name : '',
@@ -13,17 +14,17 @@ const Register = ({setAlert , register}) => {
         password2 : ''
     });
 
+    if(isAuthenticated){
+        return  <Redirect to="/dashboard"/>
+     }
+
     const {name , email, password , password2} = formData;
-
-    console.log(name,email,password);
-
-    const onChange = (e) => {
-        setFormData({...formData , [e.target.name]: e.target.value})
-    };
+    
+    const onChange = (e) => setFormData({...formData , [e.target.name]: e.target.value});
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if(password !== password2) setAlert('Excuse me, but your password does not match', 'error');
+        if(password !== password2) setAlert('Make sure your password is correct', 'error');
         register({name,email,password});
     };
 
@@ -43,4 +44,9 @@ const Register = ({setAlert , register}) => {
     );
 };
 
-export default connect(null,{setAlert,register})(Register);
+const mapStateToProps = (state) => {
+    return {isAuthenticated : state.auth.isAuthenticated}; 
+ };
+
+ 
+export default connect(mapStateToProps,{setAlert,register})(Register);

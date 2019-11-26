@@ -12,4 +12,5 @@ router.post('/' , [
 ] , createUser);
 
 router.get('/' , auth, getAuthenticatedUser);
+
 module.exports = router;
