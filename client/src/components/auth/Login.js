@@ -6,6 +6,7 @@ import { Redirect} from "react-router-dom";
 import '../../App.css';
 
 const Login = ({login,isAuthenticated}) => {
+
     const [formData,setFormData] = useState({
         email : '',
         password : ''
@@ -23,9 +24,8 @@ const Login = ({login,isAuthenticated}) => {
     };
 
     if(isAuthenticated){
-       return  <Redirect to="/dashboard"/>
-    }
-
+        return  <Redirect to="/dashboard"/>
+     }
 
     return (
         <Fragment>
