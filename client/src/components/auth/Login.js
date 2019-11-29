@@ -1,11 +1,11 @@
 import React ,{Fragment , useState} from 'react'
 import {connect} from 'react-redux';
 import {setAlert} from '../../actions/alert';
-import {login} from '../../actions/auth';
-import { Redirect} from "react-router-dom";
+import {login,loadUser} from '../../actions/auth';
+import {Redirect} from "react-router-dom";
 import '../../App.css';
 
-const Login = ({login,isAuthenticated}) => {
+const Login = ({login,isAuthenticated, isLoading,user})  => {
 
     const [formData,setFormData] = useState({
         email : '',
@@ -18,12 +18,12 @@ const Login = ({login,isAuthenticated}) => {
         setFormData({...formData , [e.target.name]: e.target.value})
     };
 
-    const onSubmit = (e) => {
+    const onSubmit =  (e) => {
         e.preventDefault(); 
-        login({email,password});
+         login({email,password});
     };
 
-    if(isAuthenticated){
+    if(isAuthenticated && !isLoading && user !== null){
         return  <Redirect to="/dashboard"/>
      }
 
@@ -42,8 +42,8 @@ const Login = ({login,isAuthenticated}) => {
 
 
 const mapStateToProps = (state) => {
-   return {isAuthenticated : state.auth.isAuthenticated}; 
+   return {isAuthenticated : state.auth.isAuthenticated , isLoading : state.auth.loading , user: state.auth.user};
 };
 
 
-export default connect(mapStateToProps,{setAlert,login})(Login);
+export default connect(mapStateToProps,{setAlert,login,loadUser})(Login);

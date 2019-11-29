@@ -24,7 +24,7 @@ export const loadUser =  () => async dispatch => {
         dispatch({type:AUTH_ERROR}); 
     }
 
-}
+};
 
 export const register = ({name,email,password}) => async dispatch => {
     const config = {
@@ -38,7 +38,7 @@ export const register = ({name,email,password}) => async dispatch => {
     try {
         const res = await axios.post('/user', body, config);
         dispatch({type : REGISTER_SUCCESS , payload:res.data});
-        dispatch(loadUser());
+        await dispatch(loadUser());
     } catch(err){
         const errors = err.response.data.errors;
 
@@ -65,7 +65,7 @@ export const login = ({email,password}) => async dispatch => {
     try {
         const res = await axios.post('/auth', body, config);
         dispatch({type : LOGIN_SUCCESS , payload:res.data});
-        dispatch(loadUser());
+        await dispatch(loadUser());
     } catch(err){
         console.log(err)
         // const errors = err.response.data.errors;
