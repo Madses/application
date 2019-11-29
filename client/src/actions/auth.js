@@ -67,14 +67,15 @@ export const login = ({email,password}) => async dispatch => {
         dispatch({type : LOGIN_SUCCESS , payload:res.data});
         dispatch(loadUser());
     } catch(err){
-        const errors = err.response.data.errors;
+        console.log(err)
+        // const errors = err.response.data.errors;
 
-        if(errors) {
-            errors.forEach(error => {
-                dispatch(setAlert(error.msg,'error'));
-            })
-        }
-        dispatch({type: LOGIN_FAIL});
+        // if(errors) {
+        //     errors.forEach(error => {
+        //         dispatch(setAlert(error.msg,'error'));
+        //     })
+        // }
+        // dispatch({type: LOGIN_FAIL});
     }
 
 };
