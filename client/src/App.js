@@ -8,14 +8,22 @@ import Register from './components/auth/Register';
 import PrivateRoute from './components/routing/PrivateRoute';
 import setAuthToken from './utils/setAuthToken';
 import {loadUser} from './actions/auth'; 
+import { createGlobalStyle } from 'styled-components'; 
 
-import './App.css';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
 
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #f4f4f4;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+`;
 
 
 if(localStorage.token) setAuthToken(localStorage.token); 
@@ -28,7 +36,9 @@ const App = () => {
     },[]);
 
     return (
+        <>
         <Provider store={store}>
+        <GlobalStyle />
             <Alert/>
             <Router>
                 <Switch>
@@ -38,6 +48,7 @@ const App = () => {
                 </Switch>
             </Router>
         </Provider>
+        </>
 )};
 
 export default App;

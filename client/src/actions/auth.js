@@ -68,14 +68,14 @@ export const login = ({email,password}) => async dispatch => {
         await dispatch(loadUser());
     } catch(err){
         console.log(err)
-        // const errors = err.response.data.errors;
+        const errors = err.response.data.errors;
 
-        // if(errors) {
-        //     errors.forEach(error => {
-        //         dispatch(setAlert(error.msg,'error'));
-        //     })
-        // }
-        // dispatch({type: LOGIN_FAIL});
+        if(errors) {
+            errors.forEach(error => {
+                dispatch(setAlert(error.msg,'error'));
+            })
+        }
+        dispatch({type: LOGIN_FAIL});
     }
 
 };
