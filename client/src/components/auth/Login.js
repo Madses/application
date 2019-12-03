@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {setAlert} from '../../actions/alert';
 import {login,loadUser} from '../../actions/auth';
 import {Redirect} from 'react-router-dom';
-import {Wrapper,Form,Label,Input,SubmitButton, FormImage} from './StyledForm';
+import {Wrapper,Form,Label,Input,SubmitButton, FormImage,FormLink,SeparatorWrapper,Separator} from './StyledForm';
 
 
 const Login = ({login,isAuthenticated, isLoading,user})  => {
@@ -32,12 +32,15 @@ const Login = ({login,isAuthenticated, isLoading,user})  => {
         <Wrapper>
             <FormImage />
             <Form onSubmit = {e => onSubmit(e)}>
-                <Label><span>Email</span></Label>
+                <Label><span>E-mail</span></Label>
                 <Input type ="text"  name="email" placeholder ="email"  value={email} onChange={e => onChange(e)}></Input>
                 <Label><span>Password</span></Label>
                 <Input type ="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)}></Input>
                 <SubmitButton type ="submit">Login</SubmitButton>
             </Form>
+            <FormLink>Forgot your password?</FormLink>
+            <SeparatorWrapper>   <Separator/>  Or <Separator/>  </SeparatorWrapper>
+            <FormLink>Create a new account</FormLink>
         </Wrapper>
     );
 };

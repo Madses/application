@@ -1,18 +1,20 @@
 import styled from 'styled-components'
+import logo from '../../img/formLogo.png'; 
 
 const Wrapper = styled.div`
     margin: auto;
-    width:400px;
+    width:330px;
     height:400px;
     background:white;
     padding: 10px;
     margin-top:10%;
+    text-align:center;
 `; 
 
 const Form = styled.form`
-   width: 400px;
+   width: 330px;
    margin: 0 auto;
-   margin-top:5%;
+   margin-top:-5%;
    background: orange;
    text-align:center
    padding-top:20px;
@@ -49,19 +51,40 @@ const Label = styled.div`
     font-size: 15px;
     margin: 0 auto; 
     color:#00ccbc;
-    padding-left:15%;
+    padding-left:8%;
     height: 20px;
     text-align:left;
 `;
 
 
 const FormImage = styled.div`
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height:200px;
     margin: 0 auto;
-    background:red;
-    margin-top: -20%;
-    border-radius:100%;
+    margin-top: -25%;
+    background-image: url(${logo});
+    background-size:cover;
+    background-repeat:no-repeat;
+`;
+
+const FormLink = styled.a`
+    text-align:center;
+    color:#00ccbc;
+    font-size:13px;
+    cursor:pointer;
+`;
+
+const SeparatorWrapper = styled.div`=
+    width:100%;
+    margin-top:10px;
+    color:#dcdcdc;
+    font-size:12px;
+    margin-bottom: 10px;
+`;
+const Separator = styled.div`
+    width:30%;
+    border-bottom:0.5px solid #dcdcdc;
+    display:inline-block;
 `;
 
 export {
@@ -70,5 +93,8 @@ export {
     Input,
     SubmitButton,
     Label,
-    FormImage
+    FormImage,
+    FormLink,
+    SeparatorWrapper,
+    Separator
 }
