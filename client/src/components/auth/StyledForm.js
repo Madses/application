@@ -5,16 +5,14 @@ const Wrapper = styled.div`
     width:400px;
     height:400px;
     background:white;
-
     padding: 10px;
-    margin-top:200px;
-    margin-top:50px;
+    margin-top:10%;
 `; 
 
 const Form = styled.form`
    width: 400px;
    margin: 0 auto;
-   margin-top:60px;
+   margin-top:5%;
    background: orange;
    text-align:center
    padding-top:20px;
@@ -56,10 +54,21 @@ const Label = styled.div`
     text-align:left;
 `;
 
+
+const FormImage = styled.div`
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background:red;
+    margin-top: -20%;
+    border-radius:100%;
+`;
+
 export {
     Wrapper,
     Form,
     Input,
     SubmitButton,
-    Label
+    Label,
+    FormImage
 }
