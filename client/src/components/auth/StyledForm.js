@@ -4,8 +4,9 @@ import logo from '../../img/formLogo.png';
 const Wrapper = styled.div`
     margin: auto;
     width:330px;
-    height:400px;
+    min-height:400px;
     background:white;
+    height:auto;
     padding: 10px;
     margin-top:10%;
     text-align:center;

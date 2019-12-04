@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     background: #f4f4f4;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    margin:0;
   }
 `;
 

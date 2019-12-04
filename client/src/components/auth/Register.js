@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {setAlert} from '../../actions/alert';
 import {register} from '../../actions/auth';
 import {Redirect} from "react-router-dom";
-import '../../App.css';
+import {Wrapper,Form,Label,Input,SubmitButton, FormImage,FormLink,SeparatorWrapper,Separator} from './StyledForm';
 
 const Register = ({setAlert ,register,isAuthenticated}) => {
 
@@ -31,16 +31,22 @@ const Register = ({setAlert ,register,isAuthenticated}) => {
 
 
     return (
-        <Fragment>
-            <h1>Register</h1>
-            <form className="authForm" onSubmit = {e => onSubmit(e)}>
-                <input type ="text"  name="name" placeholder ="name"  value={name} onChange={e => onChange(e)}></input>
-                <input type ="text"  name="email" placeholder ="email"  value={email} onChange={e => onChange(e)}></input>
-                <input type ="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)}></input>
-                <input type ="password" name="password2" placeholder="confirm your password" value={password2} onChange={e => onChange(e)}></input>
-                <input type ="submit"></input>
-            </form>
-        </Fragment>
+        <Wrapper>
+            <FormImage />
+            <Form onSubmit = {e => onSubmit(e)}>
+                <Label> Name </Label>
+                <Input type ="text"  name="name" placeholder ="name"  value={name} onChange={e => onChange(e)}></Input>
+                <Label> E-mail </Label>
+                <Input type ="text"  name="email" placeholder ="email"  value={email} onChange={e => onChange(e)}></Input>
+                <Label> Password </Label>
+                <Input type ="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)}></Input>
+                <Label> Repeat your password </Label>
+                <Input type ="password" name="password2" placeholder="confirm your password" value={password2} onChange={e => onChange(e)}></Input>
+                <SubmitButton type ="submit">Register</SubmitButton>
+
+                <div><FormLink>Already an account?</FormLink></div>
+            </Form>
+        </Wrapper>
     );
 };
 
