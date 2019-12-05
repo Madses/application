@@ -5,6 +5,7 @@ const Header = styled.div`
     width:100%;
     height:50px;
     background: #00ccbc;
+    z-index:10;
     position:fixed;
     top:0;
     -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.62);
@@ -24,6 +25,7 @@ const NavMenuVisible = styled.div`
     height: 100%;
     display:inline-block;
     transition:0.2s;
+    position:fixed;
 `; 
 
 const NavItem = styled.div`
@@ -33,7 +35,7 @@ const NavItem = styled.div`
     color: #00ccbc;
     border-bottom:0.5px solid #ececec;
     cursor:pointer;
-    font-size:10px;
+    font-size:11px;
         :hover{
             color:white;
             transition:0.3s;
@@ -45,7 +47,7 @@ const NavItem = styled.div`
 const Icon = styled.div`
     width: 30px; 
     height:30px;
-    font-size:15px;
+    font-size:18px;
     text-align:center;
     display:inline-block;
     float:left;
