@@ -20,7 +20,7 @@ const NavMenuVisible = styled.div`
     float:left;
     padding-top:80px;
     float:left;
-    background: #00ccbc;
+    background:white;
     height: 100%;
     display:inline-block;
     transition:0.2s;
@@ -30,13 +30,14 @@ const NavItem = styled.div`
     width: 100%; 
     height:30px;
     padding-top:16px;
-    color:white;
-    border-bottom:1px solid #23dccd;
+    color: #00ccbc;
+    border-bottom:0.5px solid #ececec;
     cursor:pointer;
-    font-size:12px;
+    font-size:10px;
         :hover{
-            transition:1s;
-            background:#0b847a;
+            color:white;
+            transition:0.3s;
+            background:#00ccbc;
         }
 `; 
 
@@ -44,7 +45,7 @@ const NavItem = styled.div`
 const Icon = styled.div`
     width: 30px; 
     height:30px;
-    font-size:20px;
+    font-size:15px;
     text-align:center;
     display:inline-block;
     float:left;
