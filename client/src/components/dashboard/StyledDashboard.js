@@ -7,49 +7,59 @@ const Header = styled.div`
     background: #00ccbc;
     position:fixed;
     top:0;
-`; 
-
-const MainContent = styled.div`
-    width:60%;
-    height:800px;
-    background: #fff;
-    margin:0 auto;
-    margin-top:70px;
-    color: black;
-    text-align:center;
-    padding-top:10px;
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.62);
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.62);
 `; 
 
 
-const SideNav = styled.div`
-    width:120px;
-    height:100%;
-    position:fixed;
-    background: #fff;
+
+
+const NavMenuVisible = styled.div`
+    width: 150px; 
     float:left;
-    top:0;
     padding-top:80px;
-
+    float:left;
+    background: #00ccbc;
+    height: 100%;
+    display:inline-block;
+    transition:0.2s;
 `; 
 
-const SideNavLink = styled.a`
-    width:100%;
-    height:20px;
-    color: #828282;
-    padding-left:20px;
+const NavItem = styled.div`
+    width: 100%; 
+    height:30px;
+    padding-top:16px;
+    color:white;
+    border-bottom:1px solid #23dccd;
     cursor:pointer;
     font-size:12px;
-    display: block;
-    padding-top:8px;
-    :hover{
-        color:#00ccbc;
-    }
+        :hover{
+            transition:1s;
+            background:#0b847a;
+        }
 `; 
+
+
+const Icon = styled.div`
+    width: 30px; 
+    height:30px;
+    font-size:20px;
+    text-align:center;
+    display:inline-block;
+    float:left;
+    margin-top:-5px;
+    margin-left:20px;
+    margin-right: 3px;
+`; 
+
+
+
+
 
 export {
     Header,
-    MainContent,
-    SideNav,
-    SideNavLink
-
+    NavMenuVisible,
+    NavItem,
+    Icon
 }

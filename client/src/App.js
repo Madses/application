@@ -18,11 +18,16 @@ import {
 
 
 const GlobalStyle = createGlobalStyle`
-  body {
+body {
     background: #f4f4f4;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     margin:0;
+    height:100%;
+  }
+  html{height:100%;}  
+  #root{
+      height:100%;
   }
 `;
 

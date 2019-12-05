@@ -2,26 +2,25 @@ import React , {Fragment ,useEffect} from 'react';
 import {connect} from 'react-redux';
 import {loadUser} from '../../actions/auth';
 import store from '../../store';
-import {Header ,MainContent,SideNav,SideNavLink} from './StyledDashboard'; 
-
+import {Header,NavMenuVisible,NavItem,Separato,Icon} from './StyledDashboard'; 
+import { FaAdn ,FaHome,FaDiceD6,FaRegPaperPlane,FaBriefcase} from "react-icons/fa";
 
 const Dashboard = ({user}) => {
     return (
-        
         <>
-            <SideNav>
-                <SideNavLink>Dashboard</SideNavLink>
-                <SideNavLink>Modules</SideNavLink>
-                <SideNavLink>Views</SideNavLink>
-                <SideNavLink>Routing</SideNavLink>
-                <SideNavLink>Another</SideNavLink>
-                <SideNavLink>Settings</SideNavLink>
-            </SideNav>
+            <Header />
+    
+                <NavMenuVisible>
+                    <NavItem><Icon><FaHome /></Icon>Dashboard</NavItem>
+               
+                    <NavItem><Icon><FaRegPaperPlane /></Icon>Companies</NavItem>
+                
+                    <NavItem><Icon><FaBriefcase /></Icon> Sales</NavItem>
+                
+                    <NavItem><Icon>< FaDiceD6/></Icon>Projects</NavItem>
+                   
+                </NavMenuVisible>
 
-            <Header/>
-            <MainContent>
-                <h1>{user ? (` Hi, ${user.name}`) : ('loading...')}</h1> 
-            </MainContent>
         </>
     )
 
